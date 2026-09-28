@@ -3,7 +3,7 @@
    Card-flip matching game. Vanilla JS, no libraries.
    ========================================================= */
 
-const SYMBOLS = ["🚗", "🏍️", "🚕", "🚙", "🚌", "🚓", "🚑", "🚒", "🚜", "🏎️", "🛺", "🚐", "🚚", "🚲", "🛵", "🚂", "✈️", "⛵"];
+const SYMBOLS = ["CAR", "BIKE", "TAXI", "SUV", "BUS", "COP", "AMB", "FIRE", "TRAC", "RACE", "AUTO", "VAN", "TRUCK", "CYCLE", "MOPED", "TRAIN", "PLANE", "BOAT"];
 
 const KEY_PREFIX = "memorymatch_best_";
 
@@ -35,7 +35,7 @@ function bestKey() { return KEY_PREFIX + grid.cols + "x" + grid.rows; }
 
 function updateBestDisplay() {
   const best = localStorage.getItem(bestKey());
-  document.getElementById("best").textContent = best ? best + " moves" : "—";
+  document.getElementById("best").textContent = best ? best + " moves" : " - ";
 }
 
 function startTimer() {
@@ -126,7 +126,7 @@ function onWin() {
 
   document.getElementById("win-moves").textContent = moves;
   document.getElementById("win-time").textContent = timerSeconds + "s";
-  document.getElementById("win-best").textContent = isNewBest ? "🏆 New best!" : "";
+  document.getElementById("win-best").textContent = isNewBest ? "New best!" : "";
   document.getElementById("win-banner").style.display = "block";
 }
 

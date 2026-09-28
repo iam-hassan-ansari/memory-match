@@ -1,4 +1,4 @@
-/* ===== Shared dark theme — reused across all Hassan Ansari demo projects ===== */
+/* ===== Shared dark theme - reused across all Hassan Ansari demo projects ===== */
 :root {
   --bg: #0b1220;
   --surface: #121a2b;
@@ -142,6 +142,11 @@ th { color: var(--muted); font-weight: 600; text-transform: uppercase; font-size
   background: var(--surface);
   border: 1px solid var(--accent);
   transform: rotateY(180deg);
+  font-size: clamp(10px, 2.6vw, 15px);
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  padding: 4px;
+  text-align: center;
 }
 .card-tile.matched .card-front { border-color: var(--success); background: rgba(34,197,94,.12); }
 
