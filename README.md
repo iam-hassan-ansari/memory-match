@@ -20,7 +20,7 @@ Add the link here once this repo is deployed on GitHub Pages
 - Data stored in the browser (`localStorage`)
 
 ## How It Works - Code Walkthrough
-- **Building the deck**: `newGame()` picks `pairsNeeded = totalCards / 2` random symbols from a fixed emoji list, duplicates them, and shuffles the combined list with a **Fisher-Yates shuffle** (`shuffle()`) - the standard unbiased way to randomize an array in place.
+- **Building the deck**: `newGame()` picks `pairsNeeded = totalCards / 2` random symbols from a fixed list of vehicle labels, duplicates them, and shuffles the combined list with a **Fisher-Yates shuffle** (`shuffle()`) - the standard unbiased way to randomize an array in place.
 - **Flip state**: each card object tracks its own `matched` flag; which cards are currently face-up (but not yet confirmed as a match) lives in a separate `flipped` array of IDs, rather than a property on the card - this keeps "temporarily showing" and "permanently matched" as two clearly different states.
 - **Turn logic**: `handleFlip(id)` ignores clicks while `locked` is true (during the brief pause after a wrong guess) or on a card that's already matched or already flipped. Once two cards are flipped, it compares their symbols: a match sets both to `matched` and unlocks immediately; a mismatch waits 700ms (so the player can see both cards) before clearing `flipped` and unlocking.
 - **The flip animation**: each tile has a `.card-inner` with `transform-style: preserve-3d` and two absolutely-positioned faces (`.card-back`, `.card-front`) rotated 180 degrees apart with `backface-visibility: hidden`. Adding the `flipped` (or `matched`) class just rotates `.card-inner` by 180 degrees - the CSS `transition` handles the animation, no JavaScript animation code needed.
